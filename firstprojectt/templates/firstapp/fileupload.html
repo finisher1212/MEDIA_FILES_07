@@ -1,0 +1,23 @@
+{% extends 'firstapp\Home.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class='jumbotron' style="width: 50%;margin: 3% 25%;">
+    <form method="post" enctype="multipart/form-data">
+      <h4 style="margin: 3% 0%;">Upload your choicable File</h4><br>
+      {% csrf_token %}
+      <input type="file" name="myfile"><br><br>
+      <button type="submit" class="btn btn-info">Upload</button>
+    </form>
+    <br>
+    {% if uploaded_file_url %}
+      <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+    {% endif %}<br><br>
+    <p><a href="{% url 'home' %}">Return to home</a></p>
+  </div>
+
+
+
+{% endblock %}

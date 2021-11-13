@@ -1,0 +1,12 @@
+{% extends 'firstapp\Home.html' %}
+
+
+{% block content %}
+  {% for i in file %}
+
+  D:/PROJECTS_10/MEDIA_FILES_07/firstprojectt{{i.document.url}}
+
+    <img src='{{i.document.url}}' style="width: 10%;height: 10%;", alt="Image not found">    
+  {% endfor %}
+  <p><a href="{% url 'home' %}">Return to home</a></p>
+{% endblock %}
